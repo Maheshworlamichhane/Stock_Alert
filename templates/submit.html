@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <title>Submission Confirmation</title>
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="h-full flex items-center justify-center bg-gray-100">
+    <div class="container mx-auto">
+      <div class="max-w-xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-6">
+          Your threshold is successfully saved.
+        </h1>
+        <p class="text-xl text-center mb-8">
+          Your submitted data is listed below.
+        </p>
+        <div class="text-center">
+          <form action="run_scheduled_tasks" method="post">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  my-2 rounded"
+              value="submit1"
+              name="action1"
+            >
+              Run Application
+            </button>
+          </form>
+        </div>
+        <table class="table-auto w-full mb-8">
+          <thead>
+            <tr class="bg-gray-200 text-gray-700">
+              <th class="px-4 py-2">#</th>
+              <th class="px-4 py-2">Ticker Symbol</th>
+              <th class="px-4 py-2">Price Threshold</th>
+              <th class="px-4 py-2">Email</th>
+              <th class="px-4 py-2">Phone Number</th>
+              <th class="px-4 py-2">Notification Time (in minutes)</th>
+              <th class="px-4 py-2">Notification Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white text-gray-700">
+              <td class="border px-4 py-2">{{alert.Id}}</td>
+              <td class="border px-4 py-2">{{alert.symbol}}</td>
+              <td class="border px-4 py-2">{{alert.price}}</td>
+              <td class="border px-4 py-2">{{alert.email}}</td>
+              <td class="border px-4 py-2">{{alert.phone}}</td>
+              <td class="border px-4 py-2">{{alert.alert_time}}</td>
+              <td class="border px-4 py-2">{{alert.alert_type}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
